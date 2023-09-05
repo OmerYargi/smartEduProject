@@ -4,6 +4,7 @@ const app = express();
 // MY FILES
 const pageRoute = require('./routes/pageRoute');
 const courseRoute = require('./routes/courseRoute');
+const categoryRoute = require('./routes/categoryRoute');
 
 // Veritabanına bağlanmak için Mongoose
 const mongoose = require('mongoose');
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 // ROUTE Bu dosya altında tüm route işlemleri yapıldığı için app.get kullanma, app.use kullan
 app.use('/', pageRoute);
 app.use('/courses', courseRoute);
+app.use('/categories', categoryRoute);
 
 const port = 3000;
 app.listen(port, () => {
