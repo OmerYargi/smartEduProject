@@ -1,17 +1,14 @@
 const express = require('express');
 const app = express();
 
+// MY FILES
+const pageRoute = require('./routes/pageRoute');
+const courseRoute = require('./routes/courseRoute');
+
 // Veritabanına bağlanmak için Mongoose
 const mongoose = require('mongoose');
 
-// ROUTES/PAGEROUTE FILES
-const pageRoute = require('./routes/pageRoute');
-
-// ROUTES/COURSEROUTE FILES
-const courseRoute = require('./routes/courseRoute');
-
 // Veritabanına bağlanmamızı sağlayan kod
-
 mongoose
     .connect('mongodb://localhost/smartedu-db')
     .then(() => console.log('DATABASE OK'));
