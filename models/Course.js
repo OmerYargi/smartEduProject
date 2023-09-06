@@ -28,6 +28,7 @@ const CourseSchema = new Schema({
     },
 });
 
+// pre: Veriler, veritabanına kaydedilmeden önce bu fonksiyon çalışacak.
 CourseSchema.pre('validate', function (next) {
     this.slug = slugify(this.name, {
         lower: true,

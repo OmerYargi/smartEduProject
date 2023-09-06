@@ -11,3 +11,10 @@ exports.getAboutPage = (req, res) => {
         page_name: 'about',
     });
 }
+
+// ABOUT PAGE ROUTE
+exports.getRegisterPage = (req, res) => {
+    res.status(200).render('register', {
+        page_name: 'register',
+    });
+}
