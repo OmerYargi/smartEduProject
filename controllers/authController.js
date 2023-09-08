@@ -30,7 +30,8 @@ exports.loginUser = async (req, res) => {
         // Database üzerinden gelen user.password ile form üzerinden gelen password karşılaştırması yapılıyor.
         const same = await bcrypt.compare(password, user.password);
         if (same) {
-            res.status(200).send('login');
+            req.session.userID = user._id;
+            res.status(200).redirect('/');
         } else {
             res.status(400).send('Şifre Hatalı');
         }
